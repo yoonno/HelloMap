@@ -12,16 +12,17 @@
           center: new kakao.maps.LatLng(33.450701, 126.570667),
           level:3
       };
-      var map = new kakao.maps.Map(mapContainer, mapOption);
+      var map = new kakao.maps.Map(mapContainer, mapOption); // 지도 표시할 div 태그와 center와 확대레벨
+      //마커가 표시될 위치입니다.
+      var markerPosition = new kakao.maps.LatLng(33.450701,126.570667);
 
-      var markerPosition = new kakap.maps.LatLng(33.450701,126.570667);
-      
+      //마커를 생성합니다 (표시될 위치를 객체 형태로 삽입)
       var marker = new kakao.maps.Marker({
         position: markerPosition});
-
+      // 마커가 지도 위에 표시되도록 설정합니다.
       function setCenter(lat, lng)
       {
-        marker.setMap(null);
+        marker.setMap(null);  //마커지움
         var mp= new kakao.maps.LatLng(lat,lng);
         map.setCenter(mp);
         marker = new kakao.maps.Marker({position: mp});
